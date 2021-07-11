@@ -10,7 +10,7 @@ const markerRouter = Router();
 
 markerRouter.get('/markers', getAllMarkers);
 markerRouter.post('/marker', addNewMarker);
-markerRouter.put('/marker/:uniqueId', updateMarker);
-markerRouter.delete('/marker/:uniqueId', deleteMarker);
+markerRouter.put('/marker/:markerId', updateMarker);
+markerRouter.delete('/marker/:markerId', deleteMarker);
 
 export default markerRouter;

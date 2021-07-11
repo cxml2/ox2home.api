@@ -2,6 +2,7 @@
   "scripts": {
     "start": "ts-node src/server.ts",
     "dev": "nodemon -x ts-node src/server.ts",
+    "push": "git push && git push heroku master",
     "postinstall": "husky install",
     "lint": "eslint --ext js,jsx,ts,tsx --fix"
   },

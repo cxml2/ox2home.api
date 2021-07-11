@@ -22,7 +22,7 @@ const MarkerSchema = new Schema(
       type: String,
       required: true
     },
-    numbers: {
+    phoneNumbers: {
       type: Schema.Types.Array,
       required: true
     },
@@ -37,7 +37,7 @@ const MarkerSchema = new Schema(
     uniqueId: {
       type: String
     },
-    mId: {
+    markerId: {
       type: Number
     }
   },
@@ -48,7 +48,7 @@ autoIncrement.initialize(mongoose.connection);
 
 MarkerSchema.plugin(autoIncrement.plugin, {
   model: 'Marker',
-  field: 'mId',
+  field: 'markerId',
   startAt: 1,
   incrementBy: 1
 });
