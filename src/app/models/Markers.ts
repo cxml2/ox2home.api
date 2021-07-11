@@ -1,4 +1,4 @@
-import { Schema, Document, model } from 'mongoose';
+import mongoose, { Schema, Document, model } from 'mongoose';
 import shortid from 'shortid';
 import autoIncrement from 'mongoose-auto-increment';
 
@@ -43,6 +43,8 @@ const MarkerSchema = new Schema(
   },
   { timestamps: true }
 );
+
+autoIncrement.initialize(mongoose.connection);
 
 MarkerSchema.plugin(autoIncrement.plugin, {
   model: 'Marker',
