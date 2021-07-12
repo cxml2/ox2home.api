@@ -1,5 +1,5 @@
 import mongoose, { Schema, Document, model } from 'mongoose';
-import shortid from 'shortid';
+// import shortid from 'shortid';
 import autoIncrement from 'mongoose-auto-increment';
 
 type MarkerProps = {
@@ -34,9 +34,6 @@ const MarkerSchema = new Schema(
       type: Number,
       required: true
     },
-    uniqueId: {
-      type: String
-    },
     markerId: {
       type: Number
     }
@@ -53,12 +50,19 @@ MarkerSchema.plugin(autoIncrement.plugin, {
   incrementBy: 1
 });
 
-MarkerSchema.pre<MarkerProps>('save', function (next) {
-  let todo = this;
-  if (!todo.uniqueId) {
-    todo.uniqueId = shortid.generate();
+// MarkerSchema.pre<MarkerProps>('save', function (next) {
+//   let todo = this;
+//   if (!todo.uniqueId) {
+//     todo.uniqueId = shortid.generate();
+//   }
+//   next();
+// });
+
+MarkerSchema.set('toJSON', {
+  versionKey: false,
+  transform: function (doc: any, ret: any) {
+    delete ret._id;
   }
-  next();
 });
 
 const Marker = model<MarkerProps>('Marker', MarkerSchema);
