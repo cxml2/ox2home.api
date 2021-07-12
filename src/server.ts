@@ -12,6 +12,13 @@ const MONGOURL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASS
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'X-Requested-With');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+  next();
+});
 
 app.get('/', (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname + '/public/index.html'));
