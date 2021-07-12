@@ -5,7 +5,7 @@ import autoIncrement from 'mongoose-auto-increment';
 type MarkerProps = {
   title: string;
   address: string;
-  numbers: string[];
+  phoneNumbers: string[];
   latitude: number;
   longitude: number;
   uniqueId: string;
