@@ -8,6 +8,7 @@ type MarkerProps = {
   phoneNumbers: string[];
   latitude: number;
   longitude: number;
+  active: number;
   uniqueId: string;
   mid: number;
 } & Document;
@@ -33,6 +34,10 @@ const MarkerSchema = new Schema(
     longitude: {
       type: Number,
       required: true
+    },
+    active: {
+      type: Number,
+      default: 1
     },
     markerId: {
       type: Number
