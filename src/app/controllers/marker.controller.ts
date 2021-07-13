@@ -11,6 +11,19 @@ export const getAllMarkers = async (req: Request, res: Response) => {
   }
 };
 
+export const getAllActiveMarkers = async (req: Request, res: Response) => {
+  try {
+    const response = await Marker.find();
+    const activeData = response.filter((marker) => marker.active === 1);
+    return res
+      .status(200)
+      .json({ success: true, data: activeData, error: null });
+  } catch (err) {
+    console.log(err);
+    return res.status(400).json({ success: false, data: [], error: null });
+  }
+};
+
 export const addNewMarker = async (req: Request, res: Response) => {
   try {
     const { title, address, phoneNumbers, latitude, longitude } = req.body;
