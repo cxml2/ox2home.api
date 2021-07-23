@@ -1,10 +1,12 @@
-### Documentation on API
+## Documentation on API
 
 This API is a response from software engineers for current covid-19 situation in Burma. People are dying everyday due to the lack of oxygen and the military junta's sanctions. Tens of thousands of people are in need to oxygen 25 hours a day and they are struggling to get one. This Restful API shows locations via latitude, longitude and other important information on getting oxygen in Myanmar.
 
-#### Major API Endpoints
+## Major API Endpoints
 
 Main URL : `ox2home-api.herokuapp.com`
+
+### Oxygen Providers
 
 ```
 Oxygen providers endpoint
@@ -46,4 +48,40 @@ latitude      : number
 longitude     : number
 active        : number
 markerId      : number
+```
+
+### Product Providers
+
+```
+Product providers endpoint (Oximeters, flow meters, concentrators, etc)
+
+GET -> /api/products
+POST -> /api/product
+PUT -> /api/product/:uniqueId
+```
+
+#### Notes on Restful Operations and Product prop types
+
+###### POST
+
+If you want to add marker by yourself, this is the payload that you will need to send to the api. (for product)
+
+```typescript
+interface payload = {
+  name          : string
+  address       : string
+  phoneNumbers  : string[]
+  message       : string
+  facebookLink  : string | ""
+};
+```
+
+##### Product propTypes
+
+```typescript
+name          : string
+address       : string
+phoneNumbers  : string[]
+message       : string
+facebookLink  : string | ""
 ```
