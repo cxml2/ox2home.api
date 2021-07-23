@@ -4,7 +4,7 @@ Ox2Home API is a response for current covid-19 situation in Burma (Myanmar), pro
 
 ## Documentation and major API end-points
 
-##### Documentation in English can be found [here](./docs/english_docs.md) and documentation in Burmese can be found [here](./docs/burmese_docs).
+##### Documentation in English can be found [here](./docs/english_docs.md) and documentation in Burmese can be found [here](./docs/burmese_docs.md).
 
 ## Licence
 
