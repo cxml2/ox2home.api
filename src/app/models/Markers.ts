@@ -10,7 +10,6 @@ type MarkerProps = {
   longitude: number;
   active: number;
   uniqueId: string;
-  markerId: number;
 } & Document;
 
 const MarkerSchema = new Schema(
