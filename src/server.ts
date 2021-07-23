@@ -26,7 +26,8 @@ app.get('/', (req: Request, res: Response) => {
 
 // Routes imports
 import markerRouter from './app/routers/marker.router';
-app.use('/api', markerRouter);
+import productRouter from './app/routers/product.router';
+app.use('/api', markerRouter, productRouter);
 
 mongoose
   .connect(MONGOURL, {
