@@ -1,3 +1,11 @@
-### Ox2Home
+### Overview
 
-This repo is the API for Ox2Home Application which can be found [here](https://ox2home.vercel.app/).
+Ox2Home API is a response for current covid-19 situation in Burma (Myanmar), providing people with places that provide oxygen, oxygen refill or oxygen concentrators.
+
+#### Documentation and major API end-points
+
+Documentation in English can be found [here](./docs/english_docs.md) and documentation in Burmese can be found [here](./docs/burmese_docs).
+
+#### Licence
+
+This project is under [MIT Licence](./LICENCE.md)
