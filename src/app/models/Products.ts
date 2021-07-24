@@ -8,6 +8,7 @@ type ProductProps = {
   message: string;
   facebookLink: string;
   uniqueId: string;
+  active: number;
 } & Document;
 
 const ProductSchema = new Schema(
@@ -33,6 +34,10 @@ const ProductSchema = new Schema(
     },
     uniqueId: {
       type: String
+    },
+    active: {
+      type: Number,
+      default: 1
     }
   },
   {
