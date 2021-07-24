@@ -11,6 +11,19 @@ export const getAllProducts = async (req: Request, res: Response) => {
   }
 };
 
+export const getAllActiveProducts = async (req: Request, res: Response) => {
+  try {
+    const response = await Product.find();
+    const activeData = response.filter((product) => product.active === 1);
+    return res
+      .status(200)
+      .json({ success: true, data: activeData, error: null });
+  } catch (err) {
+    console.log(err);
+    return res.status(400).json({ success: false, data: [], error: null });
+  }
+};
+
 export const addNewProduct = async (req: Request, res: Response) => {
   try {
     const { name, address, phoneNumbers, message, facebookLink } = req.body;
